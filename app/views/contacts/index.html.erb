@@ -1,7 +1,17 @@
 <h1>Contacts</h1>
 
-<ul>
-<% @contacts.each do |contact|  %>
-  <li><%= link_to contact.name, contact_path(contact) %></li>
-<% end %>
+<% @contacts.each do |contact| %>
+  <%= form_for contact do |f| %>
+    <%= f.check_box :name, id: 'edit_contact' %>
+    <%= f.submit %>
+    <%= link_to contact.name, contact_path(contact) %>
+  <% end %>
+<% end %><br>
+
+<ul id="mass-text">
 </ul>
+
+
+
+
+<%= link_to "New Text", new_message_path, id: "new_text", remote: true %>
