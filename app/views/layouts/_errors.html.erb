@@ -1,0 +1,8 @@
+<% if @message.errors.any? %>
+  <h4>Something went terribly wrong...</h4>
+  <ul>
+    <% @message.errors.full_messages.each do |message| %>
+      </li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
